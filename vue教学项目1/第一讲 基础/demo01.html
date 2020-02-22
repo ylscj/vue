@@ -5,5 +5,17 @@
 		<title></title>
 	</head>
 	<body>
+		<div id='app'>
+			{{message}}
+		</div>
+		<script src='../js/vue.js'></script>
+		<script>
+			var vm = new Vue({
+				el: '#app',
+				data: {
+					message: 'hello, world'
+				}
+			})
+		</script>
 	</body>
 </html>
