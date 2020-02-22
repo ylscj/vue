@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>demo04:v-for</title>
+	</head>
+	<body>
+		<div id='app'>
+			<ul v-for="person in persons">
+				<li>姓名：{{person.name}}，年龄：{{person.age}}</li>
+			</ul>
+		</div>
+		<script src='../js/vue.js'></script>
+		<script>
+			var vm = new Vue({
+				el: '#app',
+				data: {
+					persons:[{
+						name: '张三',
+						age: 30
+					}, {
+						name: '李四',
+						age: 20
+					}]
+				}
+			})
+		</script>
+	</body>
+</html>
