@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>第一讲 vue基础</title>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="app">
+			{{message}}
+		</div>
+		<script>
+			var vm = new Vue({
+				el: '#app',
+				data: {
+					message: "您好，Vue"
+				}
+			})
+		</script>
+	</body>
+</html>
