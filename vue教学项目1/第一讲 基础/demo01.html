@@ -7,6 +7,8 @@
 	<body>
 		<div id='app'>
 			{{message}}
+			{{strHtml}}
+			<p v-html = 'strHtml'></p>
 			<p>{{sayHello()}}</p>
 		</div>
 		<script src='../js/vue.js'></script>
@@ -15,6 +17,7 @@
 				el: '#app',
 				data: {
 					message: 'hello, world',
+					strHtml: '<h3 style="color:red">这是HTML代码</h3>',
 					site: 'www.softqilu.com'
 				},
 				methods: {

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>demo07:生命周期</title>
+	</head>
+	<body>
+		<div id='demo07'>
+			{{message}}
+		</div>
+		<script src='../js/vue.js'></script>
+		<script>
+			var vm = new Vue({
+				el: '#demo07',
+				data: {
+					message: 'hello'
+				},
+				beforeCreate: function() {
+					alert('beforeCreated!');
+				},
+				created: function() {
+					alert('created!');
+				},
+				mounted: function() {
+					alert('mounted!');
+				},
+				updated: function() {
+					alert('updated!');
+				},
+				destroyed: function() {
+					alert('destroyed!');
+				}
+			})
+		</script>
+	</body>
+</html>
