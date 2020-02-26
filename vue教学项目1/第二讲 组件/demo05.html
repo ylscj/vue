@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>demo05.html:使用props传递数据</title>
+	</head>
+	<body>
+		<div id='demo05'>
+			<child name='张三！'></child>
+		</div>
+		<script src='../js/vue.min.js'></script>
+		<script>
+			//注册
+			Vue.component('child', {
+				props: ['name'],
+				template: '<span>您好，{{name}}</span>'
+			})
+			var vm = new Vue({
+				el: '#demo05'
+			})
+		</script>
+	</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div id='demo03'>
+			<table>
+				<tbody is='my-component'></tbody>
+			</table>
+		</div>
+		<script src='../js/vue.js'></script>
+		<script>
+			Vue.component('my-component', {
+				template: '<div>这里是组件的内容</div>'
+			})	
+			var vm = new Vue({
+				el: '#demo03'
+			})
+		</script>
+	</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>demo01.html:组件基础，全局组件</title>
+	</head>
+	<body>
+		<div id='demo01'>
+			<component1></component1>
+		</div>
+		<script src='../js/vue.js'></script>
+		<script>
+			Vue.component('component1', {
+				template:'<h3>测试标题</h3>'
+			})
+			var vm = new Vue({
+				el: '#demo01',
+				data: {
+				}
+			})
+		</script>
+	</body>
+</html>

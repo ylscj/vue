@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>demo06.html:$emit</title>
+	</head>
+	<body>
+		<div id='demo06'>
+			<my-component v-on:welcome="sayHi"></my-component>
+		</div>
+		<script src='../js/vue.js'></script>
+		<script>
+			Vue.component('my-component', {
+				template:`
+					<button v-on:click="$emit('welcome')">
+						welcome
+					</button>
+				`
+			})
+			var vm = new Vue({
+				el: '#demo06',
+				methods: {
+					sayHi: function() {
+						alert('Hi!');
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

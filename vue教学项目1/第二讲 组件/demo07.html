@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>demo07.html:$emit(event, args)</title>
+	</head>
+	<body>
+		<div id='demo07'>
+			<my-component v-on:emit1='sayhello'></my-component>
+		</div>
+		<script src='../js/vue.js'></script>
+		<script>
+			Vue.component('my-component', {
+				template:`
+					<button v-on:click="callsay()">
+						点我
+					</button>
+				`,
+				methods: {
+					callsay: function() {
+						this.$emit('emit1', '这是传送的信息！');
+					}
+				}
+			})
+			var vm = new Vue({
+				el: '#demo07',
+				methods: {
+					sayhello: function(args) {
+						alert(args);
+					}
+				}
+			})
+		</script>
+	</body>
+</html>
