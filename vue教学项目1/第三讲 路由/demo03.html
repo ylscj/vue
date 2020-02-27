@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>demo03:Vue路由安装和基本配置</title>
+	</head>
+	<body>
+		<div id='demo03'>
+			<div>
+				<router-link to='/'>首页</router-link>
+				<router-link to='/type/1'>新闻</router-link>
+				<router-link to='/type/2'>娱乐</router-link>
+				<router-link to='/about'>关于我们</router-link>
+			</div>
+			<div>
+				<router-view></router-view>
+			</div>
+		</div>
+		<script src='../js/vue.js'></script>
+		<script src='../js/vue-router.js'></script>
+		<script src='demo03.js'></script>
+	</body>
+</html>
