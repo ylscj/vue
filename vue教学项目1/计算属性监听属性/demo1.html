@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>demo1</title>
+	</head>
+	<body>
+        <div id='demo1'>
+            {{message}}<br>
+            {{message.split('').reverse().join('')}}<br>
+            {{reversedMessage}}
+        </div>
+        <script src='../js/vue.min.js'></script>
+        <script>
+            new Vue({
+                data: {
+                    message: 'welcome'
+                },
+                computed: {
+                    reversedMessage: function(){
+                        return this.message.split('').reverse().join('');
+                    }
+                }
+            }).$mount('#demo1');
+        </script>
+	</body>
+</html>

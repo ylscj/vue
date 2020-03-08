@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue进行CURD操作</title>
+    <link rel="stylesheet" href="demo.css">
+</head>
+<body>
+    <div class="st">
+        <h1>vue实现对数据的增删改查(CURD)</h1>
+    </div>
+    <div class="container" id="app">
+        <div>
+            <input type="text" 
+                   placeholder="search" 
+                   @input="search" 
+                   list="cars" 
+                   class="search">
+            <datalist id="cars">
+                <option v-for="item in searchlist" :value="item"></option>
+            </datalist>
+            <input type="button" 
+                   class="add" 
+                   @click="add" 
+                   value="新增">
+        </div>
+        <div>
+            <table>
+                <tr>
+                    <th>id</th>
+                    <th>用户名</th>
+                    <th>邮箱</th>
+                    <th>性别</th>
+                    <th>省份</th>
+                    <th>爱好</th>
+                    <th>操作</th>
+                </tr>
+                <tr v-cloak v-for="(item, index) of slist">
+                    <td>{{index+1}}</td>
+                    <td>{{item.username}}</td>
+                    <td>{{item.email}}</td>
+                    <td>{{item.sex}}</td>
+                    <td>{{item.province}}</td>
+                    <td>{{item.hobby.join(' | ')}}</td>
+                    <td>
+                        <a href="javascript:;" @click="showOverlay(index)">修改</a> | 
+                        <a href="javascript:;" @click="del(index)">删除</a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <model 
+            :list='selectedlist' 
+            :isactive="isActive" 
+            v-cloak 
+            @change="changeOverlay" 
+            @modify="modify">
+        </model>
+    </div>
+</body>
+<script type="text/javascript" 
+        src="https://unpkg.com/vue@2.3.4/dist/vue.js">
+</script>
+<script src='demo.js'></script>
+</html>

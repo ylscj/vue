@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>demo2</title>
+	</head>
+	<body>
+        <div id='demo2'>
+            <p>{{site}}</p>
+        </div>
+        <script src='../js/vue.js'></script>
+        <script>
+            var vm = new Vue({
+                data: {
+                    name: 'Google',
+                    url: 'http://www.google.com'
+                },
+                computed: {
+                    site: {
+                        //getter
+                        get: function() {
+                            return this.name + ' ' + this.url
+                        },
+                        //setter
+                        set: function(newValue) {
+                            var names = newValue.split(' ')
+                            this.name = names[0]
+                            this.url = names[1]
+                        }
+                    }
+                }
+            }).$mount('#demo2');
+            //调用setter, vm.name和vm.url也会被对应更新
+            vm.site = '菜鸟教程 http://www.runoob.com';
+            document.write('name: ' + vm.name);
+            document.write('<br>');
+            document.write('url: ' + vm.url);
+        </script>
+	</body>
+</html>

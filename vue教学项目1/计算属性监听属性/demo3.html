@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>demo3 watch观察属性</title>
+	</head>
+	<body>
+        <div id='demo3'>
+            <p>{{count}}</p>
+            <br>
+            <button @click="add1">递加</button>
+        </div>
+        <script src='../js/vue.js'></script>
+        <script>
+            var vm = new Vue({
+                data: {
+                    count: 1
+                },
+                methods: {
+                    add1: function() {
+                        this.count += 1;
+                    }
+                },
+                watch: {
+                    count: function(newVal, oldVal){
+                        alert(oldVal + '变成为：' + newVal);
+                    }
+                }
+            }).$mount('#demo3')
+            
+            // vm.$watch('count', function(v1, v2){
+            //     alert(v2 + '变为：' + v1);
+            // })
+        </script>
+	</body>
+</html>
