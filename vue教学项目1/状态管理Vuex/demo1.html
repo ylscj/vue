@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        .btn {
+            width:60px;
+            line-height:100%;
+            font-size:30px;
+            margin:2px;
+            border-radius:10px;
+            box-shadow:0px 1px 2px rgba(0,0,0,0.2);
+            text-shadow:0px 1px 1px rgba(0,0,0,0.3);
+            color:#fefee9;
+            outline: none;
+            border:0.2px solid #2299ff;
+            background: linear-gradient(to bottom, #eeeff9 0%,#3399ff 100%);
+        }
+         
+        .btn:hover {
+            background: #268DFF;
+        }
+        
+        span {
+            font-size: 26px;
+            padding: 0 15px 0 15px;
+        }
+    </style>
+    <title>状态管理</title>
+</head>
+<body>
+    <div id='app'>
+        <button class='btn' @click="decrement">－</button>
+        <span>{{count}}</span>
+        <button class='btn' @click='increment'>＋</button>
+    </div>
+    <script src='../js/vue.js'></script>
+    <script src='../js/vuex.js'></script>
+    <script>
+        var store = new Vuex.Store({
+            state: {
+                count: 0
+            },
+            mutations: {
+                increment: state => state.count++,
+                decrement: function(state){
+                    state.count--
+                }
+            }
+        })
+        var vm = new Vue({
+            el: '#app',
+            computed:{
+                count:function(){
+                    return store.state.count
+                }
+            },
+            methods: {
+                increment: function(){
+                    store.commit('increment')
+                },
+                decrement: function(){
+                    store.commit('decrement')
+                }
+            }
+        })
+    </script>
+</body>
+</html>

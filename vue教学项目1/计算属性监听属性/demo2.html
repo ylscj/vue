@@ -19,9 +19,9 @@
                     site: {
                         //getter
                         get: function() {
-                            return this.name + ' ' + this.url
+                            return this.name + '的网址是：' + this.url
                         },
-                        //setter
+                        // setter
                         set: function(newValue) {
                             var names = newValue.split(' ')
                             this.name = names[0]

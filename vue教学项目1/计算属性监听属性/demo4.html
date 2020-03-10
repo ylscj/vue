@@ -7,18 +7,18 @@
 	<body>
         <div id='demo4'>
             公里：<input type="text" v-model="kilometers"><br>
-            米：<input type="text" v-model="meters" readonly="readonly">
+            米：<input type="text" v-model="meters" readonly>
         </div>
         <script src='../js/vue.js'></script>
         <script>
             var vm = new Vue({
                 data: {
-                    meters: 0,
-                    kilometers: 0
+                    kilometers: 0,
+                    meters: 0
                 },
                 watch: {
                     kilometers: function(val){
-                        this.meters = this.kilometers * 1000;
+                        this.meters = val * 1000;
                     }
                 }
             }).$mount('#demo4')
